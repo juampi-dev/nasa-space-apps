@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VARIABLES DE COLOR */
+:root {
+  --deepBlue: #07173f;
+  --electricBlue: #0042a6;
+  --neonYellow: #eafe07;
+  --blueYonder: #2e96f5;
+  --neonBlue: #0960e1;
+  --rocketRed: #e43700;
+  --martianRed: #8e1100;
+  --white: #ffffff;
+  /* APARTADO DE VARIABLES DE FUENTES */
+  --fira-sans: "Fira Sans", sans-serif;
+  --overpass: "Overpass", sans-serif;
+}
+
+/* APARTADO DE FUENTES 
+.fira-sans-bold {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.fira-sans-black {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.overpass-bold {
+  font-family: "Overpass", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.overpass-regular {
+  font-family: "Overpass", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}*/
+
+body {
+  font-family: var(--overpass);
+  background-color: var(--deepBlue);
+  color: #fff;
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  margin: 0;
+}
+
+.logoSection {
+  margin: 3em 2.5em;
+}
+
+.logoSection img {
+  max-width: 100%;
+  height: auto;
+  max-height: 10em;
+}
+
+.titles{
+  margin: 11em 0.25em 4em 0.25em;
+}
+
+.titles h1 {
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5em;
+}
+
+.titles h2 {
+  font-family: var(--fira-sans);
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2em;
+}
+
+.countdown{
+  margin: 2em 0 6em 0;
+}
+
+#daysLeft{
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  justify-content: center;
+}
+
+.diasFaltantes, .days {
+  text-align: center;
+  padding: 0.5em 0;
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+.days {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--rocketRed);
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 2px solid var(--neonYellow);
+  border-right: 2px solid var(--neonYellow);
+  margin: 0em 0.5em;
+  gap: 0.5em;
+}
+
+.time-segment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeNumber {
+  font-size: 4em;
+}
+
+.timeColon {
+  font-size: 4em;
+  padding-bottom: 0.25em;
+}
+
+.timeLabel {
+  font-size: 1em;
+}
+
+.cta{
+  margin-bottom: 6em;
+}
+
+.cta .btn {
+  display: inline-block;
+  font-size: 1.5em;
+  font-family: var(--fira-sans);
+  font-weight: 700;
+  font-style: normal;
+  background-color: var(--neonYellow);
+  color: var(--deepBlue);
+  padding: 0.8em 2em;
+  text-decoration: none;
+  transition: 500ms;
+}
+
+.btn:hover{
+  background-color: var(--electricBlue);
+  color: var(--white);
+}
+
+.indexFooter h6{
+  font-size: 0.75em;
+}
+
+@media (max-width: 420px) {
+  body {
+    background-image: url("./assets/mobileBg.png");
+  }
+}
+
+@media (min-width: 420px) {
+  body {
+    background-image: url("./assets/tabletBg.png");
+  }
+}
+
+@media (min-width: 400px) {
+  .timer {
+    margin: 0em 1.5em;
+  }
+}
+
+@media (min-width: 475px) {
+  .titles h2 {
+    padding: 0em 1em;
+  }
+  .timer {
+    margin: 0em 4em;
+  }
+}
+
+@media (min-width: 630px) {
+  body {
+    background-image: url("./assets/desktopSmallBg.png");
+  }
+
+  .diasFaltantes, .days{
+    font-size: 2.25em;
+  }
+
+  .timer{
+    margin: 0em 3em;
+    border-left: 4px solid var(--neonYellow);
+    border-right: 4px solid var(--neonYellow);
+  }
+  .timer div{
+    padding: 1em;
+  }
+
+  .titles h1 {
+    font-size: 2.25em;
+  }
+
+  .titles h2{
+    font-size: 3em;
+    padding: 0;
+  }
+
+  .timeNumber, .timeColon{
+    font-size: 6em;
+  }
+
+  .timeLabel{
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 700px){
+  .titles h2{
+    font-size: 3em;
+    padding: 0em 1em;
+  }
+}
+
+@media (min-width: 780px){
+  .timer{
+    margin: 0em 10%;
+    padding: 0em 4em;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    background-image: url("./assets/desktopBigBg.png");
+  }
+  .timer{
+    margin: 0em 25%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .timer{
+    margin: 0em 30%;
+  }
+
+  .timeNumber{
+    font-size: 6em;
+  }
+}
+
+@media (min-width: 1400px) {
+  .timer{
+    margin: 0em 30%;
+    padding: 0em 8em;
+  }
+
+  .timeNumber, .timeColon{
+    font-size: 8em;
+  }
+}
