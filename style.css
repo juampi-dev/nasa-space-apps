@@ -47,38 +47,42 @@
 
 body {
   font-family: var(--overpass);
-  background-color: var(--deepBlue);
+  background-color: #000000;
   color: #fff;
   min-height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   text-align: center;
   margin: 0;
 }
 
-.logoSection {
-  margin: 3em 2.5em;
+#heroSection{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 4em;
 }
 
-.logoSection img {
+.heroLogo {
+  margin: 2em;
+}
+
+.heroLogo img {
   max-width: 100%;
   height: auto;
-  max-height: 10em;
+  max-height: 9em;
 }
 
-.titles{
-  margin: 11em 0.25em 4em 0.25em;
+.heroTitles{
+  margin: 4em 0.25em 1em;
 }
 
-.titles h1 {
+.heroTitles h1 {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-size: 1.5em;
 }
 
-.titles h2 {
+.heroTitles h2 {
   font-family: var(--fira-sans);
   font-optical-sizing: auto;
   font-weight: 700;
@@ -86,8 +90,8 @@ body {
   font-size: 2em;
 }
 
-.countdown{
-  margin: 2em 0 6em 0;
+.heroCountdown{
+  margin: 1em 0;
 }
 
 #daysLeft{
@@ -142,8 +146,40 @@ body {
   font-size: 1em;
 }
 
+/* CALL TO ACTION SECCION */
+.ctaSection {
+  padding: 2em;
+  position: relative;
+  overflow: hidden;
+}
+
+#ctaBackgroundVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.ctaSectionContent {
+  position: relative;
+  z-index: 1;
+}
+
+.ctaSectionContent h3, h4 {
+  color: var(--neonYellow);
+  font-size: 2.5em;
+}
+
+.ctaSectionContent h3 {
+  color: var(--white);
+  font-weight: 400;
+}
+
 .cta{
-  margin-bottom: 6em;
+  margin-top: 1em;
 }
 
 .cta .btn {
@@ -169,13 +205,13 @@ body {
 }
 
 @media (max-width: 420px) {
-  body {
+  #heroSection {
     background-image: url("./assets/mobileBg.png");
   }
 }
 
 @media (min-width: 420px) {
-  body {
+  #heroSection {
     background-image: url("./assets/tabletBg.png");
   }
 }
@@ -187,7 +223,7 @@ body {
 }
 
 @media (min-width: 475px) {
-  .titles h2 {
+  .heroTitles h2 {
     padding: 0em 1em;
   }
   .timer {
@@ -200,7 +236,7 @@ body {
 }
 
 @media (min-width: 630px) {
-  body {
+  #heroSection {
     background-image: url("./assets/desktopSmallBg.png");
   }
 
@@ -221,11 +257,11 @@ body {
     min-width: 8em;
   }
 
-  .titles h1 {
+  .heroTitles h1 {
     font-size: 2.25em;
   }
 
-  .titles h2{
+  .heroTitles h2{
     font-size: 3em;
     padding: 0;
   }
@@ -240,7 +276,7 @@ body {
 }
 
 @media (min-width: 700px){
-  .titles h2{
+  .heroTitles h2{
     font-size: 3em;
     padding: 0em 1em;
   }
@@ -257,14 +293,14 @@ body {
 }
 
 @media (min-width: 1024px) {
-  body {
-    background-image: url("./assets/desktopBigBg.png");
+  #heroSection {
+    background-image: url("./assets/heroDesktop1920x794.png");
   }
-  .titles h1 {
+  .heroTitles h1 {
     font-size: 3em;
   }
 
-  .titles h2 {
+  .heroTitles h2 {
     font-size: 4em;
   }
 

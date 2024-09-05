@@ -11,19 +11,19 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700;900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
-    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
 </head>
 
 <body>
-  <main class="container">
-    <section class="logoSection">
+  <main id="heroSection">
+    <section class="heroLogo">
       <img src="./assets/logoWhite.svg" alt="NASA Space Apps Challenge Logo" />
     </section>
-    <section class="titles">
-      <h1>Global NASA Space Apps</h1>
-      <h2>Challenge Comodoro Rivadavia</h2>
+    <section class="heroTitles">
+      <h1>NASA Space Apps Challenge</h1>
+      <h2>Comodoro Rivadavia</h2>
     </section>
-    <section id="contador" class="countdown">
+    <section id="contador" class="heroCountdown">
       <div id="daysLeft">
         <p id="faltan" class="diasFaltantes"></p>
         <span id="days" class="days">41 días</span>
@@ -45,10 +45,21 @@
         </div>
       </div>
     </section>
-    <div class="cta">
-      <a href="https://www.spaceappschallenge.org/nasa-space-apps-2024/2024-local-events/comodoro-rivadavia/" target="_blank" class="btn">INSCRIBITE</a>
-    </div>
   </main>
+  <section class="ctaSection">
+    <video autoplay muted loop id="ctaBackgroundVideo">
+      <source src="./assets/ctaVideo.MP4" type="video/mp4" loading="lazy">
+      Su navegador no soporta el video. Por favor, recargue la página o visualícela desde otro navegador web.
+    </video>
+    <div class="ctaSectionContent">
+      <h3>Llevá el conocimiento más allá junto a la NASA.</h3>
+      <h4>¿Te sumás al desafío?</h4>
+      <div class="cta">
+        <a href="https://www.spaceappschallenge.org/nasa-space-apps-2024/2024-local-events/comodoro-rivadavia/"
+          target="_blank" class="btn">INSCRIBITE</a>
+      </div>
+    </div>
+  </section>
   <footer class="indexFooter">
     <h6>2024 - NASA - Agencia Comodoro Conocimiento y Desarrollo</h6>
   </footer>
