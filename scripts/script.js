@@ -35,3 +35,20 @@ const countdownInterval = setInterval(updateCountdown, 1000);
 
 // Llamar la función una vez para mostrar el tiempo inmediatamente
 updateCountdown();
+
+// Fetch de json para las cards dinámicas
+fetch('./scripts/challenges.json')
+  .then(response => response.json())
+  .then(data => {
+    const grid = document.getElementById('challengesGrid');
+    data.forEach(desafio => {
+      const card = document.createElement('div');
+      card.className = 'challengesCard';
+      card.innerHTML = `
+        <img src="assets/challenges/NASA_Space_Apps_2024_Challenge_${desafio.id}.jpg" alt="${desafio.titulo}">
+        <h6>${desafio.titulo}</h6>
+        <p>${desafio.descripcion}</p>
+      `;
+      grid.appendChild(card);
+    });
+  });

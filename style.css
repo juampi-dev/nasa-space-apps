@@ -200,6 +200,40 @@ body {
   color: var(--white);
 }
 
+#challengesSection{
+  padding: 2em;
+  background-color: var(--deepBlue);
+}
+
+#challengesHeader{
+  margin: 1em 0em;
+}
+
+#challengesHeader h5{
+  text-align: left;
+  font-size: 4em;
+  margin-left: 0.32em;
+}
+
+#challengesGrid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 3em;
+  padding: 1.5em;
+}
+
+.challengesCard{
+  background-color: var(--electricBlue);
+  max-width: 23.75em;
+  border: 1px solid var(--white);
+  padding: 1em;
+  border-radius: 2em;
+}
+
+.challengesCard h6{
+  font-size: 1.5em;
+}
+
 .indexFooter h6{
   font-size: 0.75em;
 }
