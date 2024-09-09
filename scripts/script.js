@@ -45,10 +45,24 @@ fetch('./scripts/challenges.json')
       const card = document.createElement('div');
       card.className = 'challengesCard';
       card.innerHTML = `
-        <img src="assets/challenges/NASA_Space_Apps_2024_Challenge_${desafio.id}.jpg" alt="${desafio.titulo}">
-        <h6>${desafio.titulo}</h6>
-        <p>${desafio.descripcion}</p>
+      <div class="cardInner">
+        <div class="cardFront">
+          <img src="assets/challenges/NASA_Space_Apps_2024_Challenge_${desafio.id}.jpg" alt="${desafio.titulo}">
+          <h6>${desafio.titulo}</h6>
+        </div>
+        <div class="cardBack">
+          <p>${desafio.descripcion}</p>
+        </div>
+      </div>
       `;
       grid.appendChild(card);
     });
   });
+
+/*
+  pLength = p.length;
+
+  if(pLength <= 250){
+    desafio.descripcion.innerHTML = "...";
+  }
+*/

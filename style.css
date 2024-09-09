@@ -54,7 +54,9 @@ body {
   margin: 0;
 }
 
-#heroSection{
+/* ---------- HERO SECTION ---------- */
+
+#heroSection {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -71,7 +73,7 @@ body {
   max-height: 9em;
 }
 
-.heroTitles{
+.heroTitles {
   margin: 4em 0.25em 1em;
 }
 
@@ -90,18 +92,19 @@ body {
   font-size: 2em;
 }
 
-.heroCountdown{
+.heroCountdown {
   margin: 1em 0;
 }
 
-#daysLeft{
+#daysLeft {
   display: flex;
   gap: 0.5em;
   align-items: center;
   justify-content: center;
 }
 
-.diasFaltantes, .days {
+.diasFaltantes,
+.days {
   text-align: center;
   padding: 0.5em 0;
   font-weight: 400;
@@ -168,7 +171,8 @@ body {
   z-index: 1;
 }
 
-.ctaSectionContent h3, h4 {
+.ctaSectionContent h3,
+h4 {
   color: var(--neonYellow);
   font-size: 2.5em;
 }
@@ -178,7 +182,7 @@ body {
   font-weight: 400;
 }
 
-.cta{
+.cta {
   margin-top: 1em;
 }
 
@@ -195,46 +199,84 @@ body {
   transition: 500ms;
 }
 
-.btn:hover{
+.btn:hover {
   background-color: var(--electricBlue);
   color: var(--white);
 }
 
-#challengesSection{
+/* ---------- DESAFÍOS ---------- */
+
+#challengesSection {
   padding: 2em;
   background-color: var(--deepBlue);
+  margin: 0 auto;
 }
 
-#challengesHeader{
+#challengesHeader {
   margin: 1em 0em;
 }
 
-#challengesHeader h5{
+#challengesHeader h5 {
   text-align: left;
   font-size: 4em;
   margin-left: 0.32em;
 }
 
-#challengesGrid{
+#challengesGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 3em;
   padding: 1.5em;
 }
 
-.challengesCard{
-  background-color: var(--electricBlue);
-  max-width: 23.75em;
-  border: 1px solid var(--white);
-  padding: 1em;
+.challengesCard {
+  perspective: 1000px;
+  border: 2px solid var(--electricBlue);
   border-radius: 2em;
+  overflow: hidden;
 }
 
-.challengesCard h6{
-  font-size: 1.5em;
+.cardInner {
+  height: 20em;
+  width: 20em;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
 }
 
-.indexFooter h6{
+.challengesCard:hover .cardInner {
+  transform: rotateY(180deg);
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.cardFront {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.cardBack {
+  transform: rotateY(180deg);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.indexFooter h6 {
   font-size: 0.75em;
 }
 
@@ -260,10 +302,12 @@ body {
   .heroTitles h2 {
     padding: 0em 1em;
   }
+
   .timer {
     gap: 0.5em;
     margin: 0em 2em;
   }
+
   .time-segment {
     min-width: 6em;
   }
@@ -274,16 +318,18 @@ body {
     background-image: url("./assets/desktopSmallBg.png");
   }
 
-  .diasFaltantes, .days{
+  .diasFaltantes,
+  .days {
     font-size: 2.25em;
   }
 
-  .timer{
+  .timer {
     margin: 0em 2em;
     border-left: 4px solid var(--neonYellow);
     border-right: 4px solid var(--neonYellow);
   }
-  .timer div{
+
+  .timer div {
     padding: 1em;
   }
 
@@ -295,32 +341,34 @@ body {
     font-size: 2.25em;
   }
 
-  .heroTitles h2{
+  .heroTitles h2 {
     font-size: 3em;
     padding: 0;
   }
 
-  .timeNumber, .timeColon{
+  .timeNumber,
+  .timeColon {
     font-size: 6em;
   }
 
-  .timeLabel{
+  .timeLabel {
     font-size: 1.5em;
   }
 }
 
-@media (min-width: 700px){
-  .heroTitles h2{
+@media (min-width: 700px) {
+  .heroTitles h2 {
     font-size: 3em;
     padding: 0em 1em;
   }
 }
 
-@media (min-width: 780px){
-  .timer{
+@media (min-width: 780px) {
+  .timer {
     margin: 0em 10%;
     padding: 0em 4em;
   }
+
   .time-segment {
     min-width: 10em;
   }
@@ -330,6 +378,7 @@ body {
   #heroSection {
     background-image: url("./assets/heroDesktop1920x794.png");
   }
+
   .heroTitles h1 {
     font-size: 3em;
   }
@@ -338,30 +387,33 @@ body {
     font-size: 4em;
   }
 
-  .timer{
+  .timer {
     margin: 0em 20%;
   }
 
-  .diasFaltantes, .days{
+  .diasFaltantes,
+  .days {
     font-size: 3em;
   }
 }
 
 @media (min-width: 1200px) {
-  .timeNumber{
+  .timeNumber {
     font-size: 6em;
   }
-  .timer{
+
+  .timer {
     gap: 1em;
   }
 }
 
 @media (min-width: 1400px) {
-  .timer{
+  .timer {
     padding: 0em 8em;
   }
 
-  .timeNumber, .timeColon{
+  .timeNumber,
+  .timeColon {
     font-size: 8em;
   }
 }
