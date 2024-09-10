@@ -44,25 +44,45 @@ fetch('./scripts/challenges.json')
     data.forEach(desafio => {
       const card = document.createElement('div');
       card.className = 'challengesCard';
+
+      // Verifica si la descripción es mayor a 250 caracteres
+      let descripcionCorta = desafio.descripcion;
+      if (desafio.descripcion.length > 200) {
+        descripcionCorta = desafio.descripcion.substring(0, 200) + '...';
+      }
+
       card.innerHTML = `
       <div class="cardInner">
-        <div class="cardFront">
-          <img src="assets/challenges/NASA_Space_Apps_2024_Challenge_${desafio.id}.jpg" alt="${desafio.titulo}">
+        <div class="cardFront" style="background-image: url('assets/challenges/NASA_Space_Apps_2024_Challenge_${desafio.id}.jpg');">
           <h6>${desafio.titulo}</h6>
         </div>
         <div class="cardBack">
-          <p>${desafio.descripcion}</p>
+          <p>${descripcionCorta}</p>
+          <a class="cardCta" href="${desafio.link}" target="_blank">Ver más</a>
         </div>
       </div>
       `;
+
+      const style = document.createElement('style');
+      style.innerHTML = `
+        .challengesCard:nth-child(${desafio.id}) .cardBack::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url('assets/challenges/NASA_Space_Apps_2024_Challenge_${desafio.id}.jpg');
+          background-size: cover;
+          background-position: center;
+          filter: blur(5px) grayscale(100%);
+          transform: scaleX(-1);
+          z-index: 0;
+        }
+      `;
+      document.head.appendChild(style);
+
+
       grid.appendChild(card);
     });
   });
-
-/*
-  pLength = p.length;
-
-  if(pLength <= 250){
-    desafio.descripcion.innerHTML = "...";
-  }
-*/
