@@ -52,16 +52,17 @@ fetch('./scripts/challenges.json')
       }
 
       card.innerHTML = `
-      <div class="cardInner">
-        <div class="cardFront" style="background-image: url('assets/challenges/NASA_Space_Apps_2024_Challenge_${desafio.id}.jpg');">
-          <h6>${desafio.titulo}</h6>
+        <div class="cardInner">
+          <div class="cardFront" style="background-image: url('assets/challenges/NASA_Space_Apps_2024_Challenge_${desafio.id}.jpg');">
+            <h6>${desafio.titulo}</h6>
+            <div class="flipIcon">&#x21bb; Más info</div>
+          </div>
+          <div class="cardBack">
+            <p>${descripcionCorta}</p>
+            <a class="cardCta" href="${desafio.link}" target="_blank">Ver más</a>
+          </div>
         </div>
-        <div class="cardBack">
-          <p>${descripcionCorta}</p>
-          <a class="cardCta" href="${desafio.link}" target="_blank">Ver más</a>
-        </div>
-      </div>
-      `;
+        `;
 
       const style = document.createElement('style');
       style.innerHTML = `
@@ -86,3 +87,13 @@ fetch('./scripts/challenges.json')
       grid.appendChild(card);
     });
   });
+
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+if (isTouchDevice) {
+  document.querySelectorAll('.challengesCard').forEach(card => {
+    card.addEventListener('click', function () {
+      this.classList.toggle('touch-active');
+    });
+  });
+}

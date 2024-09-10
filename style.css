@@ -54,6 +54,48 @@ body {
   margin: 0;
 }
 
+ /*
+  *   ESTE DISEÑO UTILIZA MOBILE-FIRST COMO PUNTO DE PARTIDA
+  */
+
+
+/* ---------- Navbar ---------- */
+
+/* header{
+  font-size: 400;
+  padding: 1em 0em 4em 0em;
+  display: flex;
+  justify-content: center;
+  color: var(--white);
+}
+
+#navbar{
+  background-color: var(--deepBlue);
+  border-radius: 2em;
+  position: fixed;
+  z-index: 999;
+}
+
+#navbar ul{
+  display: flex;
+  justify-content: space-around;
+  gap: 4em;
+  padding: 1em 4em;
+  list-style: none;
+}
+
+#navbar a{
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.25em;
+  transition: all 400ms ease;
+}
+
+#navbar a:hover{
+  color: var(--neonYellow);
+  text-decoration: underline;
+} */
+
 /* ---------- HERO SECTION ---------- */
 
 #heroSection {
@@ -254,6 +296,22 @@ h4 {
   transform-style: preserve-3d;
   transition: transform 0.8s ease;
   box-sizing: border-box;
+}
+
+.flipIcon {
+  font-size: 1em;
+  color: var(--neonYellow);
+  padding: 0.5em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.flipIcon:hover {
+  color: var(--neonBlue); /* Cambia el color al pasar el mouse */
+}
+
+.challengesCard.touch-active .cardInner {
+  transform: rotateY(180deg);
 }
 
 .challengesCard:hover .cardInner {
