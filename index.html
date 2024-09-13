@@ -4,7 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NASA Space Apps Challenge Comodoro Rivadavia 2024</title>
+  <meta name="description"
+    content="Participá en la primera edición de NASA Space Apps Challenge 2024 en Comodoro Rivadavia. El mundo necesita tus ideas, ¿te sumás al desafío?">
+  <meta name="keywords"
+    content="NASA, Space Apps, Comodoro Rivadavia, desafío global, innovación, espacio, tecnología, hackathon, ciencia, inscripciones 2024">
+  <title>NASA Space Apps - Comodoro Rivadavia 2024</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,23 +20,33 @@
 
 <body>
   <header>
-    <!-- <nav id="navbar">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Desafíos</a></li>
-        <li><a href="#">Contacto</a></li>
-        <li><a href="#">Inscripción</a></li>
-      </ul>
-    </nav> -->
+    <nav class="navbar">
+      <a href="#"><img src="./assets/navbarLogo.svg" alt="NASA Space Apps Challenge Navbar Small Logo" class="navbar-logo"></a>
+      <!-- Botón de hamburguesa -->
+      <a href="javascript:void(0);" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div class="navbar-links">
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#challengesSection">Desafíos</a></li>
+          <!-- <li><a href="#">Inscripción</a></li>
+          <li><a href="#">Contacto</a></li> -->
+        </ul>
+      </div>
+    </nav>
   </header>
+
   <main id="heroSection">
     <section class="heroLogo">
-      <img src="./assets/logoWhite.svg" alt="NASA Space Apps Challenge Logo" />
+      <img src="./assets/logoEventoCr.png" alt="NASA Space Apps Challenge Logo" />
     </section>
-    <section class="heroTitles"></section>
+    <!-- <section class="heroTitles">
       <h1>NASA Space Apps Challenge</h1>
       <h2>Comodoro Rivadavia</h2>
-    </section>
+    </section> -->
     <section id="contador" class="heroCountdown">
       <div id="daysLeft">
         <p id="faltan" class="diasFaltantes"></p>
@@ -56,14 +70,14 @@
       </div>
     </section>
   </main>
+
   <section class="ctaSection">
     <video autoplay muted loop id="ctaBackgroundVideo">
       <source src="./assets/ctaVideo.webm" type="video/webm">
-      <source src="./assets/ctaVideo.MP4" type="video/mp4" preload="metadata">
       Su navegador no soporta el video. Por favor, recargue la página o visualícela desde otro navegador web.
     </video>
     <div class="ctaSectionContent">
-      <h3>Llevá el conocimiento más allá junto a la NASA.</h3>
+      <h3>El mundo necesita tus ideas</h3>
       <h4>¿Te sumás al desafío?</h4>
       <div class="cta">
         <a href="https://www.spaceappschallenge.org/nasa-space-apps-2024/2024-local-events/comodoro-rivadavia/"
@@ -71,6 +85,50 @@
       </div>
     </div>
   </section>
+
+  <section id="sponsors">
+    <div id="sponsorsOrg">
+      <h6>Organizan</h6>
+      <div class="orgLogoContainer">
+        <a href="https://www.spaceappschallenge.org/" target="_blank" class="orgLogo">
+          <img src="./assets/sponsorLogos/spaceapps.svg" alt="Logo de NASA International Space Apps Challenge">
+        </a>
+        <a href="https://www.comodoro.gov.ar/" target="_blank" class="orgLogo">
+          <img src="./assets/sponsorLogos/muniCrGestion.png" alt="Logo de la Municipalidad de Comodoro Rivadavia">
+        </a>
+        <a href="https://conocimiento.gob.ar/" target="_blank" class="orgLogo">
+          <img src="./assets/sponsorLogos/accLogo.png" alt="Logo de la Agencia Comodoro Conocimiento y Desarrollo">
+        </a>
+      </div>
+    </div>
+    <div id="sponsorsMarquee">
+      <h6>Acompañan</h6>
+      <div id="marqueeContent">
+        <a href="https://www.pan-energy.com/" target="_blank" class="marqueeLogo">
+          <img src="./assets/sponsorLogos/pae.svg" alt="Logo de Pan American Energy">
+        </a>
+        <a href="https://www.invap.com.ar/" target="_blank" class="marqueeLogo">
+          <img src="./assets/sponsorLogos/invap.png" alt="Logo de INVAP">
+        </a>
+        <a href="https://scpl.coop/" target="_blank" class="marqueeLogo">
+          <img src="./assets/sponsorLogos/scpl.png" alt="Logo de la SCPL">
+        </a>
+        <a href="#" target="_blank" class="marqueeLogo">
+          <img src="./assets/sponsorLogos/linksenglishinstitute.png" alt="Logo de Links English Institute">
+        </a>
+        <a href="https://fundacionsadosky.org.ar/" target="_blank" class="marqueeLogo">
+          <img src="./assets/sponsorLogos/fsadosky.png" alt="Logo de Fundación Sadosky">
+        </a>
+        <a href="https://www.spacebeetech.com/" target="_blank" class="marqueeLogo">
+          <img src="./assets/sponsorLogos/spacebee.svg" alt="Logo de Space Bee">
+        </a>
+        <a href="https://spaceacademycamp.com/" target="_blank" class="marqueeLogo">
+          <img src="./assets/sponsorLogos/spacecampacademy.png" alt="Logo de Space Academy Camp">
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section id="challengesSection">
     <div id="challengesHeader">
       <h5>Desafíos de esta edición</h5>
@@ -78,11 +136,12 @@
     <div id="challengesGrid">
     </div>
   </section>
+
   <footer class="indexFooter">
     <h6>2024 - NASA - Agencia Comodoro Conocimiento y Desarrollo</h6>
   </footer>
 
-  <script src="./scripts/script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

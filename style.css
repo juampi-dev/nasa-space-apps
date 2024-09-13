@@ -51,17 +51,16 @@ body {
   color: #fff;
   min-height: 100vh;
   text-align: center;
-  margin: 0;
 }
 
- /*
+/*
   *   ESTE DISEÑO UTILIZA MOBILE-FIRST COMO PUNTO DE PARTIDA
   */
 
 
 /* ---------- Navbar ---------- */
 
-/* header{
+header {
   font-size: 400;
   padding: 1em 0em 4em 0em;
   display: flex;
@@ -69,32 +68,104 @@ body {
   color: var(--white);
 }
 
-#navbar{
-  background-color: var(--deepBlue);
+/* Estilos de la barra de navegación */
+.navbar {
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 45, 85, 0.6);
   border-radius: 2em;
   position: fixed;
   z-index: 999;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 0.5em 4em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#navbar ul{
+/* Mini Logo en el navbar */
+.navbar-logo {
+  height: 2em;
+  margin-right: 2.5em;
+}
+
+/* Estilos de los enlaces */
+.navbar ul {
   display: flex;
   justify-content: space-around;
   gap: 4em;
-  padding: 1em 4em;
   list-style: none;
+  padding: 0;
 }
 
-#navbar a{
+.navbar a {
   color: var(--white);
   text-decoration: none;
   font-size: 1.25em;
   transition: all 400ms ease;
 }
 
-#navbar a:hover{
+.navbar a:hover {
   color: var(--neonYellow);
   text-decoration: underline;
-} */
+}
+
+/* Estilos para el botón de hamburguesa */
+.toggle-button {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .toggle-button {
+    display: flex;
+    cursor: pointer;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar-links.active {
+    display: flex;
+    background-color: rgba(0, 45, 85, 0.9);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 1em;
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    gap: 2em;
+    padding: 0;
+  }
+
+  .navbar-links ul li {
+    text-align: center;
+  }
+
+  /* Mini Logo para pantallas pequeñas */
+  .navbar-logo {
+    height: 30px;
+    /* Tamaño más pequeño en pantallas pequeñas */
+  }
+}
 
 /* ---------- HERO SECTION ---------- */
 
@@ -106,7 +177,7 @@ body {
 }
 
 .heroLogo {
-  margin: 2em;
+  margin: 2em 2em 2em 2em;
 }
 
 .heroLogo img {
@@ -191,7 +262,129 @@ body {
   font-size: 1em;
 }
 
-/* CALL TO ACTION SECCION */
+/* ---------- SPONSORS / MARQUEE SECTION ---------- */
+
+#sponsors {
+  text-align: center;
+  background-color: #000000;
+}
+
+#sponsorsOrg h6,
+#sponsorsMarquee h6 {
+  padding: 1em;
+  font-size: 2rem;
+  color: #aaa;
+}
+
+.orgLogoContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4em;
+}
+
+.orgLogo {
+  width: 12em;
+  height: 12em;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  flex-shrink: 0;
+  padding: 1em;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orgLogo img {
+  max-width: 12em;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.orgLogo:hover img {
+  filter: brightness(2);
+  transform: scale(1.2);
+  filter: drop-shadow(2 2 0.75em var(--deepBlue));
+}
+
+#sponsorsMarquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Degradado a la izquierda y derecha del scroll */
+#sponsorsMarquee::before,
+#sponsorsMarquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20em;
+  pointer-events: none;
+  z-index: 2;
+}
+
+#sponsorsMarquee::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(17, 17, 17, 1), rgba(17, 17, 17, 0));
+}
+
+#sponsorsMarquee::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(17, 17, 17, 1), rgba(17, 17, 17, 0));
+}
+
+#marqueeContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  white-space: nowrap;
+  animation: scroll 30s linear infinite;
+  padding-bottom: 2em;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marqueeLogo {
+  display: inline-block;
+  margin-right: 4em;
+  width: 12em;
+  height: 6em;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  flex-shrink: 0;
+  padding: 1em;
+}
+
+.marqueeLogo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.marqueeLogo:hover img {
+  filter: brightness(2);
+  transform: scale(1.2);
+  filter: drop-shadow(2 2 0.75em var(--deepBlue));
+}
+
+#marqueeContent:hover {
+  animation-play-state: paused;
+}
+
+/* ---------- call to action section ---------- */
 .ctaSection {
   padding: 2em;
   position: relative;
@@ -220,19 +413,24 @@ body {
 }
 
 .ctaSectionContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.35em;
   position: relative;
   z-index: 1;
 }
 
-.ctaSectionContent h3,
-h4 {
-  color: var(--neonYellow);
-  font-size: 1.5em;
-}
-
-.ctaSectionContent h3 {
+.ctaSectionContent h3{
   color: var(--white);
   font-weight: 400;
+  font-size: 2em;
+}
+
+.ctaSectionContent h4 {
+  color: var(--neonYellow);
+  font-size: 2em;
 }
 
 .cta {
@@ -241,7 +439,7 @@ h4 {
 
 .cta .btn {
   display: inline-block;
-  font-size: 1.25em;
+  font-size: 1.5em;
   font-family: var(--fira-sans);
   font-weight: 700;
   font-style: normal;
@@ -260,7 +458,23 @@ h4 {
 /* ---------- DESAFÍOS - GRID CONTAINER ---------- */
 
 #challengesSection {
+  position: relative;
   background-color: var(--deepBlue);
+  z-index: 1;
+}
+
+#challengesSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/codePatternBg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.15;
+  z-index: -1;
 }
 
 #challengesHeader {
@@ -307,7 +521,7 @@ h4 {
 }
 
 .flipIcon:hover {
-  color: var(--neonBlue); /* Cambia el color al pasar el mouse */
+  color: var(--neonBlue);
 }
 
 .challengesCard.touch-active .cardInner {
@@ -418,8 +632,16 @@ h4 {
 
 /* ---------- FOOTER ---------- */
 
+.indexFooter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+}
+
 .indexFooter h6 {
-  font-size: 0.75em;
+  font-size: 1em;
 }
 
 @media (max-width: 420px) {
@@ -643,7 +865,7 @@ h4 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('assets/challenges/NASA_Space_Apps_2024_Challenge_7.jpg');
+    background-image: url('');
     background-size: cover;
     background-position: center;
     -webkit-filter: grayscale(100%);
@@ -700,5 +922,80 @@ h4 {
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 6em;
+  }
+}
+
+/* Mobile & tablet responsive styles */
+@media (max-width: 1024px) {
+
+  /* Ajustar el tamaño de los degradados */
+  #sponsorsMarquee::before,
+  #sponsorsMarquee::after {
+    width: 10em;
+  }
+
+  /* Ajustar el tamaño del contenedor de logos */
+  .orgLogo,
+  .marqueeLogo {
+    width: 8em;
+    height: 4em;
+  }
+
+  .orgLogo img,
+  .marqueeLogo img {
+    max-width: 8em;
+  }
+
+  /* Ajustar la velocidad de la animación para pantallas pequeñas */
+  #marqueeContent {
+    animation: scroll 20s linear infinite;
+  }
+
+  /* Ajustar el gap entre los logos para pantallas más pequeñas */
+  .marqueeLogo {
+    margin-right: 2em;
+  }
+
+  /* Reducir el tamaño del texto */
+  #sponsorsOrg h6,
+  #sponsorsMarquee h6 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+
+  /* Reducir aún más el tamaño de los degradados */
+  #sponsorsMarquee::before,
+  #sponsorsMarquee::after {
+    width: 5em;
+  }
+
+  /* Ajustar los tamaños para mobile */
+  .orgLogo,
+  .marqueeLogo {
+    width: 6em;
+    height: 3em;
+  }
+
+  .orgLogo img,
+  .marqueeLogo img {
+    max-width: 6em;
+  }
+
+  /* Ajustar la velocidad de la animación en mobile */
+  #marqueeContent {
+    animation: scroll 15s linear infinite;
+  }
+
+  /* Reducir el gap entre los logos en mobile */
+  .marqueeLogo {
+    margin-right: 1em;
+  }
+
+  /* Ajustar el tamaño del texto para mobile */
+  #sponsorsOrg h6,
+  #sponsorsMarquee h6 {
+    font-size: 1.2rem;
   }
 }
