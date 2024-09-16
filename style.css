@@ -422,7 +422,7 @@ header {
   z-index: 1;
 }
 
-.ctaSectionContent h3{
+.ctaSectionContent h3 {
   color: var(--white);
   font-weight: 400;
   font-size: 2em;
@@ -632,17 +632,235 @@ header {
 
 /* ---------- FOOTER ---------- */
 
-.indexFooter{
+/* .footerMainContent {
+  text-align: left;
+  background-color: #202020;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2em 2em;
+  gap: 2em;
+  justify-content: space-around;
+}
+
+.footerHeading {
+  padding: 0.5em 0em;
+  font-size: 1.25em;
+}
+
+.leftContent {
+  padding: 0em 2em;
   display: flex;
   flex-direction: column;
+  gap: 2em;
+}
+
+.rightContent {
+  padding: 0em 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4em;
+}
+
+.rightContent ul li{
+  list-style: none;
+  
+}
+
+.orgLogoFooterContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1em;
+}
+
+.orgLogoFooter {
+  width: 6em;
+  height: 6em;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  flex-shrink: 0;
+  padding: 1em;
+  overflow: hidden;
+  display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.orgLogoFooter img {
+  max-width: 6em;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.orgLogoFooter:hover{
+  background-color: #b1b1b1;
+  border-radius: 1em;
+  transition: background-color 800ms;
+}
+
+.orgLogoFooter:hover img {
+  filter: brightness(2);
+  transform: scale(1.2);
+  filter: drop-shadow(2 2 0.75em var(--deepBlue));
+}
+
+.pieDeFooter {
   padding: 0.5em;
 }
 
-.indexFooter h6 {
+.pieDeFooter h6 {
+  font-size: 1em;
+} */
+
+/* Footer para desktop */
+.footerMainContent {
+  text-align: left;
+  background-color: #202020;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2em 2em;
+  gap: 2em;
+  justify-content: space-around;
+}
+
+.footerHeading {
+  padding: 0.5em 0em;
+  font-size: 1.25em;
+}
+
+.leftContent {
+  padding: 0em 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.rightContent {
+  padding: 0em 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4em;
+}
+
+.rightContent ul li {
+  list-style: none;
+}
+
+.orgLogoFooterContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1em;
+}
+
+.orgLogoFooter {
+  width: 6em;
+  height: 6em;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  flex-shrink: 0;
+  padding: 1em;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orgLogoFooter img {
+  max-width: 6em;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.orgLogoFooter:hover {
+  background-color: #b1b1b1;
+  border-radius: 1em;
+  transition: background-color 800ms;
+}
+
+.orgLogoFooter:hover img {
+  filter: brightness(2);
+  transform: scale(1.2);
+  filter: drop-shadow(2 2 0.75em var(--deepBlue));
+}
+
+.pieDeFooter {
+  padding: 0.5em;
+  text-align: center;
+}
+
+.pieDeFooter h6 {
   font-size: 1em;
 }
+
+/* Footer responsive para tablets */
+@media (max-width: 1024px) {
+  .footerMainContent {
+    grid-template-columns: 1fr;
+    gap: 2em;
+    padding: 2em 1em;
+  }
+
+  .rightContent {
+    grid-template-columns: 1fr;
+  }
+  
+  .leftContent, .rightContent {
+    padding: 0 1em;
+  }
+
+  .footerHeading {
+    font-size: 1.15em;
+  }
+
+  .orgLogoFooter {
+    width: 5em;
+    height: 5em;
+  }
+
+  .orgLogoFooter img {
+    max-width: 5em;
+  }
+}
+
+/* Footer responsive para móviles */
+@media (max-width: 768px) {
+  .footerMainContent {
+    grid-template-columns: 1fr;
+    padding: 1.5em 1em;
+    gap: 1.5em;
+  }
+
+  .rightContent {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .footerHeading {
+    font-size: 1.1em;
+  }
+
+  .leftContent, .rightContent {
+    padding: 0;
+  }
+
+  .orgLogoFooter {
+    width: 4.5em;
+    height: 4.5em;
+  }
+
+  .orgLogoFooter img {
+    max-width: 4.5em;
+  }
+  
+  .pieDeFooter h6 {
+    font-size: 0.9em;
+  }
+}
+
+
+/* -------------- MEDIA QUERIES (Tablet y Desktop) -------------- */
 
 @media (max-width: 420px) {
   #heroSection {
