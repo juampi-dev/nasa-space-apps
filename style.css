@@ -43,7 +43,7 @@
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-}*/
+} */
 
 body {
   font-family: var(--overpass);
@@ -370,12 +370,12 @@ header {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  filter: brightness(1) invert(0.35);
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .marqueeLogo:hover img {
-  filter: brightness(2);
+  filter: brightness(1);
   transform: scale(1.2);
   filter: drop-shadow(2 2 0.75em var(--deepBlue));
 }
