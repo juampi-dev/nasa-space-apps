@@ -1,6 +1,12 @@
+/* RESETEO DE ESTILOS */
 * {
   margin: 0;
   padding: 0;
+}
+
+/* SCROLL SUAVE */
+html {
+  scroll-behavior: smooth;
 }
 
 /* VARIABLES DE COLOR */
@@ -632,85 +638,26 @@ header {
 
 /* ---------- FOOTER ---------- */
 
-/* .footerMainContent {
-  text-align: left;
-  background-color: #202020;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 2em 2em;
-  gap: 2em;
-  justify-content: space-around;
-}
-
-.footerHeading {
-  padding: 0.5em 0em;
-  font-size: 1.25em;
-}
-
-.leftContent {
-  padding: 0em 2em;
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-}
-
-.rightContent {
-  padding: 0em 2em;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4em;
-}
-
-.rightContent ul li{
-  list-style: none;
-  
-}
-
-.orgLogoFooterContainer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1em;
-}
-
-.orgLogoFooter {
-  width: 6em;
-  height: 6em;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  flex-shrink: 0;
-  padding: 1em;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.orgLogoFooter img {
-  max-width: 6em;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-  transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-.orgLogoFooter:hover{
-  background-color: #b1b1b1;
-  border-radius: 1em;
-  transition: background-color 800ms;
-}
-
-.orgLogoFooter:hover img {
-  filter: brightness(2);
-  transform: scale(1.2);
-  filter: drop-shadow(2 2 0.75em var(--deepBlue));
-}
-
-.pieDeFooter {
-  padding: 0.5em;
-}
-
-.pieDeFooter h6 {
+.footerListedLinks li{
   font-size: 1em;
-} */
+  padding-bottom: 1em;
+}
+
+.footerListedLinks li a:link{
+  color: var(--white);
+  text-decoration: none;
+}
+
+.footerListedLinks li a:visited{
+  color: var(--white);
+  text-decoration: none;
+}
+
+.footerListedLinks li a:hover{
+  color: var(--neonBlue);
+  text-decoration: underline;
+  transition: all 400ms ease;
+}
 
 /* Footer para desktop */
 .footerMainContent {
